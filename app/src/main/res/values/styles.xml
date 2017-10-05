@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyAppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/WeiChatActionOverflowButtonStyle</item>
+    </style>
+    
+    <style name="WeiChatActionOverflowButtonStyle">
+        <item name="android:src">@drawable/actionbar_add_icon</item>
+    </style>
+
 </resources>

@@ -1,11 +1,15 @@
 <resources>
-    <string name="app_name">WeChat_6.0_UI</string>
+    <string name="app_name">微信</string>
+
+    <!--action text-->
+    <string name="search">查找</string>
+    <string name="more">更多</string>
 
     <!--menu text-->
-    <string name="menu_start_group_chat">发起群聊</string>
-    <string name="menu_add_friend">添加朋友</string>
-    <string name="menu_scan">扫一扫</string>
-    <string name="menu_get_and_pay">收付款</string>
-    <string name="manu_help_and_suggest">帮助与反馈</string>
+    <string name="start_group_chat">发起群聊</string>
+    <string name="add_friend">添加朋友</string>
+    <string name="scan">扫一扫</string>
+    <string name="get_and_pay">收付款</string>
+    <string name="help_and_suggest">帮助与反馈</string>
 
 </resources>
