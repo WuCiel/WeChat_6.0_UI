@@ -23,22 +23,28 @@ import java.lang.reflect.Method;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
+    private String toolbarTitle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
         initToolbar();
+    }
+
+    private void init(){
+        toolbarTitle=getResources().getString(R.string.app_name);
     }
 
     private void initToolbar(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.main);
-        setSupportActionBar(toolbar);
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
-
-//        toolbar.setOverflowIcon(ContextCompat.getDrawable(this,R.drawable.actionbar_add_icon));
+        toolbar.setTitle(toolbarTitle);
+        setSupportActionBar(toolbar);//将toolbar设置为ActionBar
+        toolbar.setOnMenuItemClickListener(onMenuItemClick);//设置监听
     }
 
     private void initSearchView(Menu menu){
@@ -48,27 +54,50 @@ public class MainActivity extends AppCompatActivity {
         searchView.onActionViewExpanded();
     }
 
-    private Toolbar.OnMenuItemClickListener onMenuItemClick=new Toolbar.OnMenuItemClickListener(){
-
-        @Override
-        public boolean onMenuItemClick(MenuItem item) {
-            Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
-            switch (item.getItemId()){
-                case R.id.actionbar_search:
-                    break;
-
-            }
-            return true;
-        }
-    };
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.main,menu);
 
         initSearchView(menu);
-
         return true;
     }
+
+    private Toolbar.OnMenuItemClickListener onMenuItemClick=new Toolbar.OnMenuItemClickListener(){
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.actionbar_search:
+                    break;
+
+                case R.id.actionbar_more:
+                    break;
+
+                case R.id.menu_start_group_chat:
+                    Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.menu_add_friend:
+                    Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.menu_scan:
+                    Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.menu_get_and_pay:
+                    Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.menu_help_and_suggest:
+                    Toast.makeText(MainActivity.this, item.getTitle()+"", Toast.LENGTH_SHORT).show();
+                    break;
+
+                default:
+                    throw new RuntimeException("不存在此子菜单选项");
+            }
+            return true;
+        }
+    };
 }
