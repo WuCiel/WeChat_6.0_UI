@@ -11,10 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/toolbar"
-        android:titleTextColor="@color/titleColor"
-        />
+        android:titleTextColor="@color/titleColor">
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
+        android:textColor="@color/colorPrimary"
         android:layout_below="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

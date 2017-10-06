@@ -7,4 +7,7 @@
     <!--toolbar-->
     <color name="toolbar">#393A3F</color>
     <color name="titleColor">#FFFFFF</color>
+
+    <!--windowBackgroud-->
+    <color name="mainBackground">#FFFFFF</color>
 </resources>

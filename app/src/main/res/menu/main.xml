@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/actionbar_search_icon"
-        android:actionViewClass="android.widget.SearchView"
-        android:showAsAction="always|collapseActionView"
-        android:title="@string/search" />
 
-    <item android:id="@+id/action_edit"
-        android:title="@string/get_and_pay"
-        android:orderInCategory="80"
-        android:icon="@drawable/menu_group_chat_icon"
-        android:showAsAction="never" />
-
-    <item android:id="@+id/action_share"
-        android:title="@string/help_and_suggest"
-        android:orderInCategory="90"
-        android:icon="@drawable/men_scan_icon"
-        android:showAsAction="never" />
-
-    <item android:id="@+id/action_settings"
-        android:title="@string/start_group_chat"
+        android:id="@+id/actionbar_search"
         android:orderInCategory="100"
-        android:showAsAction="never"/>
+        android:icon="@drawable/actionbar_search_icon"
+        android:title="@string/search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/actionbar_more"
+        android:icon="@drawable/actionbar_add_icon"
+        android:title="@string/more"
+        app:showAsAction="ifRoom|collapseActionView">
+
+        <menu>
+            <item
+                android:id="@+id/menu_start_group_chat"
+                android:icon="@drawable/menu_group_chat_icon"
+                android:showAsAction="never"
+                android:title="@string/start_group_chat" />
+
+            <item
+                android:id="@+id/menu_add_friend"
+                android:icon="@drawable/menu_add_icon"
+                android:showAsAction="never"
+                android:title="@string/add_friend" />
+
+            <item
+                android:id="@+id/menu_scan"
+                android:icon="@drawable/men_scan_icon"
+                android:showAsAction="never"
+                android:title="@string/scan" />
+
+            <item
+                android:id="@+id/menu_get_and_pay"
+                android:icon="@drawable/menu_feedback_icon"
+                android:showAsAction="never"
+                android:title="@string/get_and_pay" />
+
+            <item
+                android:id="@+id/menu_help_and_suggest"
+                android:icon="@drawable/menu_feedback_icon"
+                android:showAsAction="never"
+                android:title="@string/help_and_suggest" />
+        </menu>
+
+    </item>
 
 
 </menu>

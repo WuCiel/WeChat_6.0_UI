@@ -12,10 +12,17 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:actionOverflowButtonStyle">@style/WeiChatActionOverflowButtonStyle</item>
+        <item name="android:windowBackground">@color/mainBackground</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>
-    
-    <style name="WeiChatActionOverflowButtonStyle">
+
+    <!--设置弹出的子菜单显示在toolbar下面-->
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+    <style name="WeChatOverflowButtonStyle" parent="android:Widget.ActionButton.Overflow">
         <item name="android:src">@drawable/actionbar_add_icon</item>
     </style>
 
