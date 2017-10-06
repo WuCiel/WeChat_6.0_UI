@@ -22,6 +22,7 @@
         <item name="overlapAnchor">false</item>
     </style>
 
+    <!--将右上角的三个点的改成其他图片-->
     <style name="WeChatOverflowButtonStyle" parent="android:Widget.ActionButton.Overflow">
         <item name="android:src">@drawable/actionbar_add_icon</item>
     </style>
