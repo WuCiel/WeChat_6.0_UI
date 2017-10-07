@@ -12,4 +12,10 @@
     <string name="get_and_pay">收付款</string>
     <string name="help_and_suggest">帮助与反馈</string>
 
+    <!--bottom tab-->
+    <string name="chatListString">微信</string>
+    <string name="contactString">通讯录</string>
+    <string name="discoveryString">发现</string>
+    <string name="meString">我</string>
+
 </resources>

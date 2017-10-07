@@ -1,10 +1,13 @@
 package com.example.cier.wechat_60_ui;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,15 +15,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import java.lang.reflect.Method;
+import com.example.cier.wechat_60_ui.Adapter.MyViewPagerAdapter;
+import com.example.cier.wechat_60_ui.Fragment.Chatlist;
+import com.example.cier.wechat_60_ui.Fragment.Contact;
+import com.example.cier.wechat_60_ui.Fragment.Discovery;
+import com.example.cier.wechat_60_ui.Fragment.Me;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG="MainActivity";
 
+    //toolbar
     private Toolbar toolbar;
     private String toolbarTitle;
     private SearchView searchView;
 
-    private boolean KEYCODE_BACK_FLAG=true;
+    //viewPager
+    private ViewPager viewPager;
+    private List<Fragment> fragmentList;
+    private MyViewPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +44,14 @@ public class MainActivity extends AppCompatActivity {
 
         init();
         initToolbar();
+        setFragToPager();
     }
 
     private void init() {
         toolbarTitle = getResources().getString(R.string.app_name);
+        viewPager= (ViewPager) findViewById(R.id.viewPager);
+
+        fragmentList=new ArrayList<>();
     }
 
     private void initToolbar() {
@@ -55,6 +74,23 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(searchQueryListener);
         searchView.setOnQueryTextFocusChangeListener(searchFocusChsngeListener);
 //        searchView.setOnSystemUiVisibilityChangeListener(searchViewVisiblelistener);
+    }
+
+    private void setFragToPager(){
+        Chatlist chatList=new Chatlist();
+        Contact contact=new Contact();
+        Discovery discovery=new Discovery();
+        Me me=new Me();
+        fragmentList.add(chatList);
+        fragmentList.add(contact);
+        fragmentList.add(discovery);
+        fragmentList.add(me);
+
+        if(chatList==null)
+            Log.e(TAG,"chatList=null");
+
+        pagerAdapter=new MyViewPagerAdapter(getSupportFragmentManager(),fragmentList);
+        viewPager.setAdapter(pagerAdapter);
     }
 
     @Override

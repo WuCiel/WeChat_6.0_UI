@@ -10,4 +10,10 @@
 
     <!--windowBackgroud-->
     <color name="mainBackground">#FFFFFF</color>
+
+    <!--bottom tab-->
+    <color name="tabStroke">#E0E0E0</color>
+    <color name="tabBoard">#FCFCFC</color>
+    <color name="tabViewSelected">#4AB529</color>
+    <color name="textColor">#CBCBCB</color>
 </resources>
