@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(toolbarTitle);
         setSupportActionBar(toolbar);//将toolbar设置为ActionBar
         toolbar.setOnMenuItemClickListener(onMenuItemClick);//设置子菜单监听
-
     }
 
     private void initSearchView(Menu menu) {
