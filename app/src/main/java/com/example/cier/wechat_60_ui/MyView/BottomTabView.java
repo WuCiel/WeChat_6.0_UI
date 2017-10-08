@@ -9,6 +9,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.os.Looper;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -18,6 +21,13 @@ import android.view.View;
 import com.example.cier.wechat_60_ui.R;
 
 /**
+ * 自定义view步骤
+ * 1.创建一个类继承View，比如说MyView
+ * 2.创建attrs.xml，在里面声明view所含有的属性，并且绑定上述所声明的类
+ * 3.在布局文件中使用自定义的view
+ * 4.在MyView的构造方法中获取自定义属性的值
+ * 5.重写onMeasure
+ * 6.重写onDraw
  * Created by Cier on 2017/10/7.
  */
 
@@ -36,7 +46,7 @@ public class BottomTabView extends View {
     private Paint textPaint;
     private Rect iconRect;
     private Rect textBound;
-    private float alpha=1.0f;
+    private float alpha=0.0f;
 
     private void init(){
         selectedColor= ContextCompat.getColor(getContext(),R.color.tabViewSelected);
@@ -116,7 +126,7 @@ public class BottomTabView extends View {
         int left=(getMeasuredWidth()-iconWidth)/2;
         int top=(getMeasuredHeight()-iconWidth-textBound.height())/2;
 
-        iconRect=new Rect(left,top,left+iconWidth,top+iconWidth);
+        iconRect=new Rect(left+10,top+10,left+iconWidth-20,getMeasuredHeight()*2/3);
     }
 
     @Override
@@ -143,8 +153,8 @@ public class BottomTabView extends View {
         textPaint.setColor(textColor);
         textPaint.setAlpha(255-alpha);
         textPaint.setTextSize(textSize);
-        int x=getMeasuredWidth()/2-textBound.width()/2;
-        int y=iconRect.bottom;
+        int x=iconRect.left+10+iconRect.width()/2-textBound.width()*2/3;
+        int y=iconRect.bottom+textBound.height();
         canvas.drawText(text,x,y,textPaint);
     }
 
@@ -152,8 +162,8 @@ public class BottomTabView extends View {
         textPaint.setColor(selectedColor);
         textPaint.setAlpha(alpha);
         textPaint.setTextSize(textSize);
-        int x=getMeasuredWidth()/2-textBound.width()/2;
-        int y=iconRect.bottom;
+        int x=iconRect.left+10+iconRect.width()/2-textBound.width()*2/3;
+        int y=iconRect.bottom+textBound.height();
         canvas.drawText(text,x,y,textPaint);
     }
 
@@ -172,6 +182,18 @@ public class BottomTabView extends View {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint.setAlpha(255);
         canvas.drawBitmap(iconBitmap,null,iconRect,paint);//再绘画图标
+    }
 
+    public void setIconAlpha(float alpha){
+        this.alpha=alpha;
+        RePaint();
+    }
+
+    private void RePaint(){
+        if(Looper.getMainLooper()==Looper.myLooper()){
+            invalidate();
+        }else{
+            postInvalidate();
+        }
     }
 }

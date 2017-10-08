@@ -20,6 +20,9 @@ import com.example.cier.wechat_60_ui.Fragment.Chatlist;
 import com.example.cier.wechat_60_ui.Fragment.Contact;
 import com.example.cier.wechat_60_ui.Fragment.Discovery;
 import com.example.cier.wechat_60_ui.Fragment.Me;
+import com.example.cier.wechat_60_ui.Listener.BottomTabListener;
+import com.example.cier.wechat_60_ui.Listener.ViewPagerChangeListener;
+import com.example.cier.wechat_60_ui.MyView.BottomTabView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +36,15 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
 
     //viewPager
-    private ViewPager viewPager;
+    public static ViewPager viewPager;
     private List<Fragment> fragmentList;
     private MyViewPagerAdapter pagerAdapter;
+
+    //BottomTab
+    private BottomTabListener tabListener;
+    private ViewPagerChangeListener pageChangeListener;
+    private BottomTabView tab_1,tab_2,tab_3,tab_4;
+    public static List<BottomTabView> tabList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,24 @@ public class MainActivity extends AppCompatActivity {
         viewPager= (ViewPager) findViewById(R.id.viewPager);
 
         fragmentList=new ArrayList<>();
+        tabList=new ArrayList<>();
+        tabListener=new BottomTabListener();
+        pageChangeListener=new ViewPagerChangeListener();
+        viewPager.setOnPageChangeListener(pageChangeListener);
+
+        tab_1= (BottomTabView) findViewById(R.id.tab_one);
+        tab_2= (BottomTabView) findViewById(R.id.tab_two);
+        tab_3= (BottomTabView) findViewById(R.id.tab_three);
+        tab_4= (BottomTabView) findViewById(R.id.tab_four);
+        tabList.add(tab_1);
+        tabList.add(tab_2);
+        tabList.add(tab_3);
+        tabList.add(tab_4);
+        tab_1.setOnClickListener(tabListener);
+        tab_2.setOnClickListener(tabListener);
+        tab_3.setOnClickListener(tabListener);
+        tab_4.setOnClickListener(tabListener);
+        tab_1.setIconAlpha(1.0f);
     }
 
     private void initToolbar() {
@@ -84,9 +111,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(contact);
         fragmentList.add(discovery);
         fragmentList.add(me);
-
-        if(chatList==null)
-            Log.e(TAG,"chatList=null");
 
         pagerAdapter=new MyViewPagerAdapter(getSupportFragmentManager(),fragmentList);
         viewPager.setAdapter(pagerAdapter);

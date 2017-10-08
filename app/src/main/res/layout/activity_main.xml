@@ -13,15 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/toolbar"
-        android:titleTextColor="@color/titleColor">
-
-    </android.support.v7.widget.Toolbar>
+        android:titleTextColor="@color/titleColor" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></android.support.v4.view.ViewPager>
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:id="@+id/bottomTab"
@@ -31,7 +29,8 @@
         android:orientation="horizontal">
 
         <com.example.cier.wechat_60_ui.MyView.BottomTabView
-            myview:icon="@drawable/menu_add_icon"
+            android:id="@+id/tab_one"
+            myview:icon="@drawable/tab_wechat_icon"
             myview:color="@color/tabViewSelected"
             myview:text="@string/chatListString"
             myview:textSize="12dp"
@@ -40,7 +39,8 @@
             android:layout_height="match_parent" />
 
         <com.example.cier.wechat_60_ui.MyView.BottomTabView
-            myview:icon="@drawable/menu_add_icon"
+            android:id="@+id/tab_two"
+            myview:icon="@drawable/tab_contact_icon"
             myview:color="@color/tabViewSelected"
             myview:text="@string/contactString"
             myview:textSize="12dp"
@@ -49,7 +49,8 @@
             android:layout_height="match_parent" />
 
         <com.example.cier.wechat_60_ui.MyView.BottomTabView
-            myview:icon="@drawable/menu_add_icon"
+            android:id="@+id/tab_three"
+            myview:icon="@drawable/tab_discovery_icon"
             myview:color="@color/tabViewSelected"
             myview:text="@string/discoveryString"
             myview:textSize="12dp"
@@ -58,7 +59,8 @@
             android:layout_height="match_parent" />
 
         <com.example.cier.wechat_60_ui.MyView.BottomTabView
-            myview:icon="@drawable/menu_add_icon"
+            android:id="@+id/tab_four"
+            myview:icon="@drawable/tab_me_icon"
             myview:color="@color/tabViewSelected"
             myview:text="@string/meString"
             myview:textSize="12dp"
