@@ -16,4 +16,10 @@
     <color name="tabBoard">#FCFCFC</color>
     <color name="tabViewSelected">#4AB529</color>
     <color name="textColor">#CBCBCB</color>
+
+    <!--discovery page-->
+    <color name="ViewPagerBackground">#EBEBEB</color>
+    <color name="buttonNotSelected">#FFFFFF</color>
+    <color name="buttonSelected">#D9D9D9</color>
+    <color name="buttonText">#000000</color>
 </resources>

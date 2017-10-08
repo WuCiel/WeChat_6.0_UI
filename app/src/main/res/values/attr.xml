@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--bottom tab view-->
     <attr name="icon" format="reference"></attr>
     <attr name="color" format="color"></attr>
     <attr name="text" format="string"></attr>
@@ -12,5 +13,12 @@
         <attr name="text"></attr>
         <attr name="textSize"></attr>
     </declare-styleable>
+
+    <!--discovery button-->
+    <attr name="disButtonIcon" format="reference"></attr>
+    <attr name="disButtonIconRight" format="reference"></attr>
+    <attr name="disButtonText" format="string"></attr>
+    <attr name="disButtonTextColor" format="color"></attr>
+    <attr name="disButtonTextSize" format="dimension"></attr>
 
 </resources>

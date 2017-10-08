@@ -18,4 +18,14 @@
     <string name="discoveryString">发现</string>
     <string name="meString">我</string>
 
+    <!--discovery viewpager-->
+    <string name="dis_friendCircleString">朋友圈</string>
+    <string name="dis_scanString">扫一扫</string>
+    <string name="dis_shakeString">摇一摇</string>
+    <string name="dis_nearPeopleString">附近的人</string>
+    <string name="dis_driftBottleString">漂流瓶</string>
+    <string name="dis_shoppingString">购物</string>
+    <string name="dis_gameString">游戏</string>
+    <string name="dis_smallProgramString">小程序</string>
+
 </resources>

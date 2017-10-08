@@ -2,12 +2,132 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ViewPagerBackground"
     android:orientation="vertical">
 
-    <TextView
-        android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/dis_friendCircle"
+        android:textColor="@color/buttonText"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="discovery" />
+        android:background="@drawable/discovery_page_button"
+        android:text="@string/dis_friendCircleString" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/buttonNotSelected"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/dis_scan"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_scanString" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/ViewPagerBackground" />
+
+        <Button
+            android:id="@+id/dis_shake"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_shakeString" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/buttonNotSelected"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/dis_nearPeople"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_nearPeopleString" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/ViewPagerBackground" />
+
+        <Button
+            android:id="@+id/dis_driftBottle"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_driftBottleString" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/buttonNotSelected"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/dis_shopping"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_shoppingString" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/ViewPagerBackground" />
+
+        <Button
+            android:id="@+id/dis_game"
+            android:textColor="@color/buttonText"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/discovery_page_button"
+            android:text="@string/dis_gameString" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dis_smallProgram"
+        android:textColor="@color/buttonText"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/discovery_page_button"
+        android:text="@string/dis_smallProgramString" />
 
 </LinearLayout>
